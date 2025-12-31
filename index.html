@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhotoPoet - Photo to Poetry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Belleza&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --theme-bg: #FDFBF0;
+        --theme-text: #064e3b;
+        --theme-accent: #C1D4BB;
+        --theme-secondary: #ECF3E9;
+        --theme-border: #C1D4BB;
+      }
+
+      body {
+        font-family: 'Alegreya', serif;
+        background-color: var(--theme-bg);
+        color: var(--theme-text);
+        transition: background-color 0.5s ease, color 0.5s ease;
+      }
+
+      .theme-midnight {
+        --theme-bg: #0f172a;
+        --theme-text: #f1f5f9;
+        --theme-accent: #334155;
+        --theme-secondary: #1e293b;
+        --theme-border: #334155;
+      }
+
+      .theme-parchment {
+        --theme-bg: #f4ecd8;
+        --theme-text: #4a3728;
+        --theme-accent: #d2b48c;
+        --theme-secondary: #e8dfc8;
+        --theme-border: #c8b090;
+      }
+
+      .theme-watercolor {
+        --theme-bg: #f0f7ff;
+        --theme-text: #1e3a8a;
+        --theme-accent: #bfdbfe;
+        --theme-secondary: #e0f2fe;
+        --theme-border: #bae6fd;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Belleza', sans-serif;
+      }
+
+      .cream-bg { background-color: var(--theme-bg); }
+      .soft-green-bg { background-color: var(--theme-secondary); }
+      .border-sage { border-color: var(--theme-border); }
+      .text-sage-dark { color: var(--theme-text); }
+      
+      /* Animations */
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      @keyframes softReveal {
+        0% { opacity: 0; transform: scale(0.98) translateY(5px); filter: blur(4px); }
+        100% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0); }
+      }
+
+      @keyframes buttonShine {
+        0% { transform: translateX(-100%) skewX(-15deg); }
+        25% { transform: translateX(200%) skewX(-15deg); }
+        100% { transform: translateX(200%) skewX(-15deg); }
+      }
+
+      .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+      }
+
+      .animate-soft-reveal {
+        animation: softReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+
+      .shimmer-button {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shimmer-button::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.4),
+          transparent
+        );
+        animation: buttonShine 4s infinite linear;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

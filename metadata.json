@@ -1,0 +1,7 @@
+{
+  "name": "PhotoPoet",
+  "description": "A creative companion that transforms your visual memories into evocative poetry using advanced AI vision and reasoning.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
