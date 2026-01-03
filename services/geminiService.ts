@@ -9,7 +9,7 @@ export const generateInspiration = async (
   mimeType: string
 ): Promise<string> => {
   if (!API_KEY) throw new Error("API Key is not configured.");
-  const ai = new GoogleGenAI({ apiKey: API_KEY });
+  const genAI = new GoogleGenAI(import.meta.env.VITE_GEMINI_API_KEY);
   const model = "gemini-3-flash-preview";
   
   const prompt = `
